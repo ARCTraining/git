@@ -1,0 +1,326 @@
+## Back up your work!
+
+When doing research, or back in undergrad, we all heard the common refrain "back up your work!"
+
+:::{.incremental}
+- This sometimes involved floppy disks, usb sticks, external harddrives;
+- Also now likely to include cloud platforms and storage options (Dropbox, OneDrive, etc.)
+:::
+
+## Back up your work!
+
+![[secumem, CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/9/98/Burned_laptop_secumem_11.jpg){fig-alt="Laptop on fire!"}
+
+## Back up your work!
+
+![](../assets/cloud-computer.svg){fig-alt="Network of computers"}
+
+We need a back-up!
+
+:::{.fragment}
+The "backup" of our *local git repository* is called a [remote repository]{.extra}.
+:::
+
+## Remote repository
+
+The [remote]{.extra} repository can be:
+
+- on a different computer
+- on an external harddrive
+- **on a cloud service** like GitHub
+
+## Remote repository {.smaller}
+
+::::: {.columns}
+
+:::: {.column width="20%"}
+
+::: {fig-align="center" fig-alt="A simple diagram showing the git workflow loop of untracked files to staged files (using git add) to committed files (using git commit) back to untracked files (by editing or adding files)."}
+```{mermaid}
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#9fe1ff',
+      'primaryTextColor': '#470044',
+      'primaryBorderColor': '#000000',
+      'lineColor': '#9158A2',
+      'secondaryColor': '#e79aff',
+      'tertiaryColor': '#fffc58'
+    }
+  }
+}%%
+
+flowchart TD
+    Untracked -->|**git add**| Staged
+    Staged -->|**git commit**| Committed
+    Committed -.->|*edit files*| Untracked
+```
+:::
+::::
+
+:::: {.column width="60%"}
+
+::: {fig-alt="A simple GitGraph chart illustrating git commits as points on a line that represents the working branch. Two branches diverge at different points from the 'main' branch, before re-merging."}
+
+```{mermaid}
+
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#9fe1ff',
+      'primaryTextColor': '#470044',
+      'primaryBorderColor': '#000000',
+      'lineColor': '#9158A2',
+      'secondaryColor': '#e79aff',
+      'tertiaryColor': '#fffc58'
+    }
+  }
+}%%
+
+gitGraph
+   commit id: "a1b2c3d"
+   commit id: "4e5f678"
+   commit id: "90abcde"
+   commit id: "7835cd3"
+   commit id: "34efc1a"
+   commit id: "cb45ad1"
+   commit id: "456abc1"
+   commit id: "ad1cb45"
+   commit id: "def134a"
+
+```
+
+:::
+::::
+
+:::: {.column width="20%"}
+
+::: {fig-align="center" fig-alt="A simple diagram showing the git workflow loop of untracked files to staged files (using git add) to committed files (using git commit) back to untracked files (by editing or adding files)."}
+```{mermaid}
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#9fe1ff',
+      'primaryTextColor': '#470044',
+      'primaryBorderColor': '#000000',
+      'lineColor': '#9158A2',
+      'secondaryColor': '#e79aff',
+      'tertiaryColor': '#fffc58'
+    }
+  }
+}%%
+
+flowchart TD
+    Local -->|**git push**| Remote
+    Remote -.->|**pull**| Local
+```
+:::
+
+::::
+
+:::::
+
+- You can `push` bundles of commits to your [remote repository]{.extra}
+- You can also `pull` changes from the remote repository to your local...
+  - You can have different "local" repositories on different machines...
+
+## Remote repository
+
+::::: {.columns}
+
+:::: {.column width="40%"}
+
+::::
+
+:::: {.column width="20%"}
+
+::: {fig-align="center" fig-alt="A simple diagram showing the git workflow loop of untracked files to staged files (using git add) to committed files (using git commit) back to untracked files (by editing or adding files)."}
+```{mermaid}
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#9fe1ff',
+      'primaryTextColor': '#470044',
+      'primaryBorderColor': '#000000',
+      'lineColor': '#9158A2',
+      'secondaryColor': '#e79aff',
+      'tertiaryColor': '#fffc58'
+    }
+  }
+}%%
+
+flowchart TD
+    Local-1 -->|**push**| Remote
+    Remote -.->|**pull**| Local-1
+```
+:::
+
+::::
+
+:::: {.column width="40%"}
+
+::::
+
+:::::
+
+## Remote repository
+
+::::: {.columns}
+
+:::: {.column width="40%"}
+
+::::
+
+:::: {.column width="20%"}
+
+::: {fig-align="center" fig-alt="A simple diagram showing the git workflow loop of untracked files to staged files (using git add) to committed files (using git commit) back to untracked files (by editing or adding files)."}
+```{mermaid}
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#9fe1ff',
+      'primaryTextColor': '#470044',
+      'primaryBorderColor': '#000000',
+      'lineColor': '#9158A2',
+      'secondaryColor': '#e79aff',
+      'tertiaryColor': '#fffc58'
+    }
+  }
+}%%
+
+flowchart TD
+    Local-1 -->|**push**| Remote
+    Remote -.->|**pull**| Local-1
+    Remote -.->|**pull**| Local-2
+```
+:::
+
+::::
+
+:::: {.column width="40%"}
+
+::::
+
+:::::
+
+## Remote repository
+
+::::: {.columns}
+
+:::: {.column width="40%"}
+
+::::
+
+:::: {.column width="20%"}
+
+::: {fig-align="center" fig-alt="A simple diagram showing the git workflow loop of untracked files to staged files (using git add) to committed files (using git commit) back to untracked files (by editing or adding files)."}
+```{mermaid}
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#9fe1ff',
+      'primaryTextColor': '#470044',
+      'primaryBorderColor': '#000000',
+      'lineColor': '#9158A2',
+      'secondaryColor': '#e79aff',
+      'tertiaryColor': '#fffc58'
+    }
+  }
+}%%
+
+flowchart TD
+    Local-1 -->|**push**| Remote
+    Remote -.->|**pull**| Local-1
+    Remote -.->|**pull**| Local-2
+    Local-2 -->|**push**| Remote
+```
+:::
+
+::::
+
+:::: {.column width="40%"}
+
+::::
+
+:::::
+
+- You can use a remote repository to **sync** repositories across different machines
+- For yourself, or for collaborators
+
+## Remote git
+
+::: {fig-alt="A simple GitGraph chart illustrating git commits as points on a line that represents the working branch. Two branches diverge at different points from the 'main' branch, before re-merging."}
+
+```{mermaid}
+
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#9fe1ff',
+      'primaryTextColor': '#470044',
+      'primaryBorderColor': '#000000',
+      'lineColor': '#9158A2',
+      'secondaryColor': '#e79aff',
+      'tertiaryColor': '#fffc58'
+    },
+    'gitGraph': {
+      'showBranches': true,
+      'showCommitLabel': false,
+      'mainBranchName': 'main (remote)',
+      'mainBranchOrder': 2}
+  }
+}%%
+
+gitGraph
+   commit
+   commit
+   branch 'mmq-patch-01' order: 1
+   commit
+   commit
+   checkout 'main (remote)'
+   merge 'mmq-patch-01'
+   branch 'pt-patch-01' order:3
+   checkout 'pt-patch-01'
+   commit
+   commit
+   checkout 'pt-patch-01'
+   checkout 'main (remote)'
+   merge 'pt-patch-01'
+
+```
+
+:::
+
+This allows us to collaborate with others
+
+
+## GitHub
+
+In the same way that we are focussing on Git, we are going to focus on GitHub for this course
+
+- There are lots of things we can get GitHub to do that are not "version control" specific; we will link to these in the "extended reading" section at the end of the course.
+- For now, lets think of it as a remote repository for `git`.
+
+## Sharing your git repo
+
+- Having a public `git` repository is a great tool for open and reproducible science
+- See the [Five recommendations for FAIR software](https://fair-software.nl/)
+
+![](https://upload.wikimedia.org/wikipedia/commons/2/25/Open_Access_logo_PLoS_white.svg){fig-alt="Open access icon" fig-align="center"}
+
+
+## Learn by doing
+
+The best way to get used to using git is by actually using it, which brings us on to our next practical...
+
+- Edit files
+- `git add <filename>`
+- `git commit -m "sensible git message"`
+- [New:]{.extra} `git push origin main`
