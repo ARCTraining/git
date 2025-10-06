@@ -20,6 +20,9 @@ website:
         - href: version_control/02_practical.qmd
         - href: version_control/03_remote_git.qmd
         - href: version_control/04_branching.qmd
+      - section: Day 2
+        contents:
+        - href: version_control/collaboration.qmd
 
 format:
   html:
