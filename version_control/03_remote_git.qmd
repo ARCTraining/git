@@ -1,0 +1,14 @@
+---
+title: "3. Remote git"
+subtitle: "Setting up a remote repository as a backup"
+format:
+    html:
+        respect-user-color-scheme: true
+        theme:
+            light: [cosmo, ../theme.scss, styles.scss]
+            dark: [cosmo, ../theme-dark.scss, styles.scss]
+        css: ../styles.css
+        toc: true
+---
+
+- intro git push etc.

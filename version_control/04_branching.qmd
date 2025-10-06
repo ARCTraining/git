@@ -1,0 +1,15 @@
+---
+title: "4. Branching and pull requests"
+subtitle: "Branching and pull requests"
+format:
+    html:
+        respect-user-color-scheme: true
+        theme:
+            light: [cosmo, ../theme.scss, styles.scss]
+            dark: [cosmo, ../theme-dark.scss, styles.scss]
+        css: ../styles.css
+        toc: true
+---
+
+- Intro branching
+- Testing out branching and pull requests
