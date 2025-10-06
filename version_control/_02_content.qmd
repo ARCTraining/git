@@ -193,7 +193,7 @@ gitGraph
 ::: {#fig-workflow}
 ![](../assets/process_fast.gif){fig-alt="Animated GIF showing a simplified git workflow process, adding, editing and deleting files in a project."}
 
-Git workflow process visualization: each "version" of the project is a commit
+Git workflow process visualization: each "version" of the project is a commit.
 :::
 
 ## What does git do? {.smaller}
