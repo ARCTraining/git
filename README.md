@@ -4,6 +4,10 @@ SWD3: Research Software Development documentation and course notes.
 
 [![DOI](https://zenodo.org/badge/<GITHUB_ID>.svg)](https://zenodo.org/badge/latestdoi/<GITHUB_ID>)
 
+## Contributing
+
+You can add markdown and the page will automatically build when pushed to GitHub.
+
 ## Building instructions
 
 *Note that this repository is also configured to build via a GitHub action. HTML pages are not tracked via version control*.
