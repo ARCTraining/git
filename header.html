@@ -1,0 +1,12 @@
+<div style="outline:none" tabindex="-1">
+  <a href="#main-content" class="page__content-skip-link">Skip to main content</a>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const toggleButton = document.querySelector('.navbar-toggler[role="menu"]');
+  if (toggleButton) {
+    toggleButton.removeAttribute('role');
+  }
+});
+</script>

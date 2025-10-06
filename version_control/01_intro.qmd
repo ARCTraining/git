@@ -1,0 +1,57 @@
+---
+title: "1. Introduction"
+subtitle: "Version control: your digital lab notebook"
+format:
+    html:
+        respect-user-color-scheme: true
+        theme:
+            light: [cosmo, ../theme.scss, styles.scss]
+            dark: [cosmo, ../theme-dark.scss, styles.scss]
+        css: ../styles.css
+        toc: true
+---
+
+In today's session, we will jump between learning about version control conceptually, and testing out some basic git tasks on our computers.
+
+The aim of today is:
+
+- To help you build a "mental model" of what git is and how it works
+- Get you familiar with the basic git workflow
+
+The aim of this session is:
+
+- To highlight the usefulness of version control in research
+- To get you set up with a GitHub account and on GitHub codespaces
+
+:::{.callout-tip}
+## Reveal.js Presentation Controls
+
+The presentation linked below uses Reveal.js to build a HTML presentation. You can use the following keyboard shortcuts:
+
+- **Navigate slides**: Use arrow keys (←/→) or space bar to advance
+- **Overview mode**: Press `O` to see all slides at once
+- **Speaker notes**: Press `S` to open speaker view  
+- **Help menu**: Press `?` to see all keyboard shortcuts
+- **Fullscreen**: Press `F` to toggle fullscreen mode
+- **Zoom**: Press `Alt` + click to zoom in on slide content
+- **Print/PDF**: Add `?print-pdf` to the URL for print-friendly version
+
+You can also scroll down to see the presentation content printed all-in-one page below. Note that the content is written for a presentation as opposed to article, and designed for the presentation light theme, so some points may be repeated and not optimised for the dark theme!
+
+:::
+
+[Open introduction presentation ↗](01_presentation.qmd){.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Open presentation in a new tab" target="_blank"}
+
+## Presentation content in a single page
+
+
+```{python}
+#| echo: false
+#| output: asis
+
+# Include and convert presentation content
+from heading_converter import include_and_convert
+result = include_and_convert('_01_content.qmd')
+print(result)
+```
+

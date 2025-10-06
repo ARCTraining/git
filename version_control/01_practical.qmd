@@ -1,0 +1,63 @@
+---
+title: "1.1 Practical"
+subtitle: "Set up a GitHub account and create your first repository"
+
+---
+
+## Step 1: Create a GitHub Account
+
+If you don't already have a GitHub account:
+
+1. Go to [github.com](https://github.com)
+2. Click **"Sign up"** in the top right corner
+3. Enter your email address, create a password, and choose a username
+4. Complete the verification process
+5. Choose the free plan when prompted
+
+## Step 2: Create Your First Repository
+
+1. **Sign in to GitHub** and navigate to your dashboard
+2. **Click the green "New" button** or the **"+"** icon in the top right corner and select **"New repository"**
+
+![Create new repository button](https://docs.github.com/assets/cb-11427/mw-1440/images/help/repository/repo-create.webp)
+
+3. **Fill in repository details:**
+   - **Repository name**: Choose a descriptive name (e.g., `my-first-repo`)
+   - **Description**: Add a brief description (optional but recommended)
+   - **Visibility**: Keep it **Public** for this exercise
+   - **✅ Check "Add a README file"** - this creates an initial file in your repository
+   - Leave other options as default
+
+![Repository creation form](https://docs.github.com/assets/cb-61138/mw-1440/images/help/repository/create-repository-name.webp){fig-alt="Screenshot of GitHub, creating a new repository form"}
+
+4. **Click "Create repository"**
+
+Read the [GitHUb repository creation docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories) for more information.
+
+## Step 3: Launch Your Repository in Codespaces
+
+1. **Navigate to your new repository** (you should be there automatically after creation)
+2. **Click the green "Code" button**
+3. **Select the "Codespaces" tab**
+4. **Click "Create codespace on main"**
+
+![Launch Codespaces](https://docs.github.com/assets/cb-49943/mw-1440/images/help/codespaces/who-will-pay.webp){fig-alt="Screenshot of GitHub, showing the Launch CodeSpaces button."}
+
+5. **Wait for Codespaces to launch** - this may take 1-2 minutes
+6. **You now have a full development environment** running in your browser!
+
+:::{.callout-tip}
+## What just happened?
+
+You've created:
+
+- A **repository** - your project folder on GitHub
+- A **Codespace** - a virtual development environment connected to your repository
+- Your first **README.md** file - which serves as the front page of your repository
+
+Your Codespace includes a code editor, terminal, and all the tools needed for development, including `git`!
+:::
+
+## Next Steps
+
+Once your Codespace is running, you're ready to start learning git commands in the next practical session.

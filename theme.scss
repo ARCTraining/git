@@ -1,0 +1,28 @@
+/*-- scss:defaults --*/
+$link-color: #572B6F;
+$text-muted: #0B5126;
+
+/*-- scss:rules --*/
+
+
+
+.navbar .aa-DetachedSearchButton::after {
+  color: #545555;
+}
+
+// Set sans-serif as default font family and honor user font size settings
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  // Use user's preferred font size as the base
+  font-size: 100%; // This equals 1rem and honors browser/user settings
+}
+
+body {
+  font-family: inherit; // Inherit from html element
+}
+
+// Override any hardcoded pixel font sizes to use relative units instead
+* {
+  // Force all elements to respect user's font size preference
+  font-size: revert !important;
+}

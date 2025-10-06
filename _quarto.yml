@@ -1,0 +1,34 @@
+project:
+  type: website
+  resources:
+    - "accessibility/html/fonts.html"
+
+website:
+  page-footer: "© 2025 University of Leeds  <br> [Update cookie preferences]{#open_preferences_center .btn .btn-outline-primary}" 
+  cookie-consent: true
+  title: "SWD2: Intro to version control with git and GitHub"
+  navbar:
+    logo: "logo.png"
+    logo-alt: "Logo, with a cartoon blue cloud with electronic circuits"
+  sidebar:
+    contents:
+      - section: Day 1
+        contents:
+        - href: version_control/01_intro.qmd
+        - href: version_control/01_practical.qmd
+        - href: version_control/02_local_git.qmd
+        - href: version_control/02_practical.qmd
+
+format:
+  html:
+    respect-user-color-scheme: true
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme-dark.scss]
+    css: styles.css
+    toc: true
+    include-in-header: header.html
+    include-before-body: main.html
+
+highlight-style: a11y
+

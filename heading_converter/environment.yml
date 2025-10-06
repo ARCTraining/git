@@ -1,0 +1,12 @@
+name: heading-conv-env
+
+channels:
+  - conda-forge
+  - nodefaults
+
+dependencies:
+  - python=3.13
+  - jupyter
+  - pip
+  - pip:
+    - --editable .

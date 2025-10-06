@@ -1,0 +1,67 @@
+/* css styles */
+
+/* Remove incorrect menu role from navbar toggler */
+.navbar-toggler[role="menu"] {
+  /* This won't remove the attribute, but you can use JS for that */
+}
+
+
+.navbar .quarto-color-scheme-toggle::after {
+  content: " Toggle Theme";
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+}
+
+
+.navbar .aa-DetachedSearchButton::after {
+  content: " Search";
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.navbar .quarto-color-scheme-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+}
+
+.page__content-skip-link:active, .page__content-skip-link:focus {
+    position: static!important;
+    clip: auto;
+    height: auto;
+    width: auto;
+    overflow: auto;
+}
+.page__content-skip-link:active, .page__content-skip-link:focus {
+    position: static!important;
+    clip: auto;
+    height: auto;
+    width: auto;
+    overflow: auto;
+}
+.page__content-skip-link {
+    position: absolute!important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    background-color: #012635;
+    color: #fff;
+    display: block;
+    padding: 3px;
+    text-align: center;
+}
+.page__content-skip-link {
+    position: absolute!important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    background-color: #012635;
+    color: #fff;
+    display: block;
+    padding: 3px;
+    text-align: center;
+}

@@ -1,0 +1,33 @@
+---
+title: "Learning Git and GitHub"
+---
+
+# Course content
+
+This course is an introduction to version control with git and GitHub.
+
+This course will teach you the basics of version control, and how to implement it as part of your research computing workflow.
+
+## Course structure
+
+This course runs over two half days.
+
+The course runs on virtual machines using GitHub Codespaces to ensure a consistent environment for all learners. We also provide instructions for installing locally after the course.
+
+There is optional homework for in-between sessions, to practice running git locally on your work machine.
+
+This course is hands-on with lots of exercises, please be prepared to code and collaborate!
+
+
+### Day 1 Content
+
+- General introduction to version control
+- Conceptual framework: how does git work?
+    - Building a mental model
+- Introduction to the local git cycle
+- Hands-on practical sessions
+
+### Day 2 Content
+
+- Collaboration with git and GitHub
+- Handling merge conflicts

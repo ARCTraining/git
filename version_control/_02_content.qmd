@@ -1,0 +1,411 @@
+# Part 1: local `git`
+
+## What does `git` do?
+
+::: {#fig-workflow}
+![](../assets/process_fast.gif){fig-alt="Animated GIF showing a simplified git workflow process, adding, editing and deleting files in a project."}
+
+Git workflow process visualization
+:::
+
+## What does `git` do?
+
+- `git` allows you to bundle up changes to various files, and give the group of changes a unique [commit hash]{.extra} and an explanatory message.
+- `git` works on a project level, so you can make a bunch of changes to different files in a folder, and then [commit]{.extra} all those changes with a descriptive message
+- It's recorded that *you* made those changes, and there's a unique [commit hash]{.extra} that you can quote to point at the exact state of your folder when you added those changes.
+
+## What does `git` do?
+
+- `git` is a command line program
+- There are actually only a few commands you'll really use regularly
+- But before we move on to learning what commands are needed, let's try to build a [mental model]{.extra} of `git`
+- Hopefully this will be useful to those of you who are already using `git` too!
+
+## What does git do? {.smaller}
+
+
+::::: {.columns}
+
+::::{.column}
+
+Old version of `python-file.py`
+
+::: {.box-pb style="font-family:monospace; font-size:0.9em"}
+
+1 &#35; This is a comment
+
+2 import matplotlib.pyplot as plt
+
+3 x = [1, 2, 3, 4, 5]
+
+4 y = [3, 4, 5, 6, 7]
+
+5 plt.scatter(x, y)
+
+:::
+
+::::
+
+::::{.column}
+
+New version of `python-file.py`
+
+::: {.box-pb style="font-family:monospace; font-size:0.9em"}
+
+1 &#35; This is a comment
+
+2 import matplotlib.pyplot as plt
+
+[3 import numpy as np]{style="color:green"}
+
+4 x = [1, 2, 3, 4, 5]
+
+5 y = [3, 4, 5, 6, 7]
+
+[6 plt.scatter(x, y)]{style="color:red; text-decoration: underline wavy"}
+
+[6 plt.plot(x, y)]{style="color:green"}
+
+:::
+
+[Line 3 added,]{style="color:green"} [line 6 removed,]{style="color:red; text-decoration: underline wavy"}
+[line 6 added.]{style="color:green"}
+
+
+::::
+
+
+:::::
+
+## What does git do? {.smaller}
+
+
+::::: {.columns}
+
+::::{.column}
+
+New version of `python-file.py`
+
+::: {.box-pb style="font-family:monospace; font-size:0.9em"}
+
+1 &#35; This is a comment
+
+2 import matplotlib.pyplot as plt
+
+[3 import numpy as np]{style="color:green"}
+
+4 x = [1, 2, 3, 4, 5]
+
+5 y = [3, 4, 5, 6, 7]
+
+[6 plt.scatter(x, y)]{style="color:red; text-decoration: underline wavy"}
+
+[6 plt.plot(x, y)]{style="color:green"}
+
+:::
+
+[Line 3 added,]{style="color:green"} [line 6 removed,]{style="color:red; text-decoration: underline wavy"}
+[line 6 added.]{style="color:green"}
+
+
+::::
+
+::::{.column}
+
+Associated git commit
+
+::: {.box-ly style="font-family:monospace; font-size:0.9em"}
+
+File: python-file.py
+
+Commit hash: u87wy9o2
+
+Commit message: change plotting method
+
+[+++ 3 import numpy as np]{style="color:green"}
+
+[-&nbsp;-- 6 plt.scatter(x, y)]{style="color:red; text-decoration: underline wavy"}
+
+[+++ 6 plt.plot(x, y)]{style="color:green"}
+
+:::
+
+
+
+::::
+
+
+:::::
+
+## What does git do? {.smaller}
+
+- When we work with `git`, we bundle up changes in our project folder (/directory) and [commit]{.extra} our changes.
+- Each [commit]{.extra} (bundle of changes) gets a unique [id]{.extra} - a hexadecimal hash that's 40 digits long (we're just going to abbreviate to the first 7)
+- The [commits]{.extra} are made to a "branch"
+
+::: {fig-alt="A simple GitGraph chart illustrating git commits as points on a line that represents the working branch. Two branches diverge at different points from the 'main' branch, before re-merging."}
+
+```{mermaid}
+
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#9fe1ff',
+      'primaryTextColor': '#470044',
+      'primaryBorderColor': '#000000',
+      'lineColor': '#9158A2',
+      'secondaryColor': '#e79aff',
+      'tertiaryColor': '#fffc58'
+    }
+  }
+}%%
+
+gitGraph
+   commit id: "a1b2c3d"
+```
+
+:::
+
+## What does git do? {.smaller}
+
+- When we work with `git`, we bundle up changes in our project folder (/directory) and [commit]{.extra} our changes.
+- Each [commit]{.extra} (bundle of changes) gets a unique [id]{.extra} - a hexadecimal hash that's 40 digits long (we're just going to abbreviate to the first 7)
+- The [commits]{.extra} are made to a "branch" - pause any thinking for a moment
+
+::: {fig-alt="A simple GitGraph chart illustrating git commits as points on a line that represents the working branch. Two branches diverge at different points from the 'main' branch, before re-merging."}
+
+```{mermaid}
+
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#9fe1ff',
+      'primaryTextColor': '#470044',
+      'primaryBorderColor': '#000000',
+      'lineColor': '#9158A2',
+      'secondaryColor': '#e79aff',
+      'tertiaryColor': '#fffc58'
+    }
+  }
+}%%
+
+gitGraph
+   commit id: "a1b2c3d"
+   commit id: "4e5f678"
+```
+
+:::
+
+## What does `git` do?
+
+::: {#fig-workflow}
+![](../assets/process.gif){fig-alt="Animated GIF showing a simplified git workflow process, adding, editing and deleting files in a project."}
+
+Git workflow process visualization
+:::
+
+## What does git do? {.smaller}
+
+::: {fig-alt="A simple GitGraph chart illustrating git commits as points on a line that represents the working branch. Two branches diverge at different points from the 'main' branch, before re-merging."}
+
+```{mermaid}
+
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#9fe1ff',
+      'primaryTextColor': '#470044',
+      'primaryBorderColor': '#000000',
+      'lineColor': '#9158A2',
+      'secondaryColor': '#e79aff',
+      'tertiaryColor': '#fffc58'
+    }
+  }
+}%%
+
+gitGraph
+   commit id: "a1b2c3d"
+```
+
+:::
+
+- Because each "bundle" of changes has been saved with a unique id, we can [roll back]{.extra} our changes to a previous version if we want
+
+## What does git do? {.smaller}
+
+::: {fig-alt="A simple GitGraph chart illustrating git commits as points on a line that represents the working branch. Two branches diverge at different points from the 'main' branch, before re-merging."}
+
+```{mermaid}
+
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#9fe1ff',
+      'primaryTextColor': '#470044',
+      'primaryBorderColor': '#000000',
+      'lineColor': '#9158A2',
+      'secondaryColor': '#e79aff',
+      'tertiaryColor': '#fffc58'
+    }
+  }
+}%%
+
+gitGraph
+   commit id: "a1b2c3d"
+   commit id: "4e5f678"
+```
+
+:::
+
+## The `git` cycle {.smaller}
+
+So we've looked at the idea of bundling up changes as [commits]{.extra}, but what does that actually involve?
+
+I think of it like packing a picnic basket:
+
+:::: {.box-ly}
+
+::: {.incremental}
+1. I make a sandwich and wrap it up
+2. I add it to the basket
+3. I chop up some fruit and put it in a lunchbox
+4. I add *that* to the basket
+5. I make a smoothie and bottle it
+6. I add *that* to the basket too
+7. Finally, I close over the top of the picnic basket and secure the latch
+:::
+::::
+
+## The `git` cycle {.smaller}
+
+How does this have anything to do with `git`?
+
+:::: {.box-ly}
+1. I make a sandwich and wrap it up
+2. I add it to the basket
+3. I chop up some fruit and put it in a lunchbox
+4. I add *that* to the basket
+5. I make a smoothie and bottle it
+6. I add *that* to the basket too
+7. Finally, I close over the top of the picnic basket and secure the latch
+::::
+
+## The `git` cycle {.smaller}
+
+Let's introduce the concept of `add` as well as `commit`.
+
+:::: {.box-ly}
+1. I make a sandwich and wrap it up -> **I make some edits to files/create new files in my project folder**
+2. I add it to the basket -> **I `add` my changes**
+3. I chop up some fruit and put it in a lunchbox -> **I make some more edits to files**
+4. I add *that* to the basket  -> **I `add` my changes**
+5. I make a smoothie and bottle it -> **I make some more edits to files**
+6. I add *that* to the basket too -> **I `add` my changes**
+7. I close over the top of the picnic basket and secure the latch -> **I `commit` all these changes that I previously `added`**
+::::
+
+## The `git` cycle
+
+Let's introduce the concept of `add` as well as `commit`.
+
+:::{.incremental}
+- You create or edit files, *then*
+- You `add` those changes, *then*
+- You either create/edit more files and repeat `add` *or* you `commit` all the added changes with a little message
+:::
+
+:::: {.box-lp}
+I think of `git add` as like a quick save, whereas `git commit` is a full, proper save.
+::::
+
+## The `git` cycle
+
+[create/edit -> add -> commit]{.extra}
+
+:::::: {.columns}
+
+::::: {.column width="40%"}
+::::{.fragment}
+
+::: {fig-align="center" fig-alt="A simple diagram showing the git workflow loop of untracked files to staged files (using git add) to committed files (using git commit) back to untracked files (by editing or adding files)."}
+```{mermaid}
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#9fe1ff',
+      'primaryTextColor': '#470044',
+      'primaryBorderColor': '#000000',
+      'lineColor': '#9158A2',
+      'secondaryColor': '#e79aff',
+      'tertiaryColor': '#fffc58'
+    }
+  }
+}%%
+
+flowchart TD
+    Untracked -->|**git add**| Staged
+    Staged -->|**git commit**| Committed
+    Committed -.->|*edit files*| Untracked
+```
+:::
+::::
+:::::
+
+::: {.column width="60%"}
+:::{.fragment}
+- We need to `add` everything to our picnic basket
+- When we are happy with our bundle of changes, we close up the basket and `commit` the changes, and add a nice little label to it in the form of a commit message
+:::
+:::::
+
+::::::
+
+
+## The `git` cycle {.smaller}
+
+Some new jargon - the *state* of the files in your repository
+
+:::::: {.columns}
+
+::::: {.column width="40%"}
+::: {fig-align="center" fig-alt="A simple diagram showing the git workflow loop of untracked files to staged files (using git add) to committed files (using git commit) back to untracked files (by editing or adding files)."}
+```{mermaid}
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#9fe1ff',
+      'primaryTextColor': '#470044',
+      'primaryBorderColor': '#000000',
+      'lineColor': '#9158A2',
+      'secondaryColor': '#e79aff',
+      'tertiaryColor': '#fffc58'
+    }
+  }
+}%%
+
+flowchart TD
+    Untracked -->|**git add**| Staged
+    Staged -->|**git commit**| Committed
+    Committed -.->|*edit files*| Untracked
+```
+:::
+:::::
+
+::: {.column width="60%"}
+
+- [Untracked/modified]{.extra}: files that have been created or edited since the last cycle, that haven't been **added** or **committed**
+- [Staged]{.extra}: files that have been **added** (put in the basket) but **not committed** yet.
+- [Committed]{.extra}: files that have been **added and committed** and now have a unique id attached to their most recent changes (and have not been edited since the last commit)
+
+As well as being able to "undo" entire commits, you can undo different stages of this cycle (e.g. you can *unstage* files so they go from being [staged]{.extra} to [untracked]{.extra})
+:::::
+
+::::::
+
+# Let's try it out...
