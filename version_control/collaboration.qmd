@@ -10,3 +10,5 @@ format:
         css: ../styles.css
         toc: true
 ---
+
+Content about collaboration
