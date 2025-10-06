@@ -1,0 +1,33 @@
+---
+title: "3.2 Practical"
+subtitle: "Push to our remote!"
+
+---
+
+
+We've already tried our "local `git` cycle" of editing, adding, and commiting. Now let's try to upload to our remote!
+
+## Our git workflow
+
+Remember our git cycle:
+
+- We create/modify/edit files
+- We **add** our changes (once, twice, many times) (`git add <filename>`)
+- We **commit** our bundle of changes (`git commit -m "message here"`)
+- We repeat this cycle!
+- We're now going to add `git push`!
+
+::: {.callout-tip collapse="true"}
+## git hints
+
+- Create and edit files and folders
+- Run `git status` to check what changes you've made and to see the *state* of the files
+- Run `git add filename` to add the changes in a file
+    - You can add files in sub-folders too: `git add sub-folder/filename`
+    - You can also add multiple files: `git add filename1 filename2 subfolder/filename3`
+- Run `git status` to check the *state* of the files
+- Commit your bundle of files with a short message with `git commit -m "message goes here"`
+- You can also just run `git commit` and a text editor will open for you to write a commit message
+- Run `git status` to check the *state* of the files
+- When you are ready to push the edits to your remote, hit `git push`
+:::
