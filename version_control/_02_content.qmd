@@ -161,7 +161,7 @@ gitGraph
 
 - When we work with `git`, we bundle up changes in our project folder (/directory) and [commit]{.extra} our changes.
 - Each [commit]{.extra} (bundle of changes) gets a unique [id]{.extra} - a hexadecimal hash that's 40 digits long (we're just going to abbreviate to the first 7)
-- The [commits]{.extra} are made to a "branch" - pause any thinking for a moment
+- The [commits]{.extra} are made to a "branch"
 
 ::: {fig-alt="A simple GitGraph chart illustrating git commits as points on a line that represents the working branch. Two branches diverge at different points from the 'main' branch, before re-merging."}
 
@@ -191,9 +191,9 @@ gitGraph
 ## What does `git` do?
 
 ::: {#fig-workflow}
-![](../assets/process.gif){fig-alt="Animated GIF showing a simplified git workflow process, adding, editing and deleting files in a project."}
+![](../assets/process_fast.gif){fig-alt="Animated GIF showing a simplified git workflow process, adding, editing and deleting files in a project."}
 
-Git workflow process visualization
+Git workflow process visualization: each "version" of the project is a commit
 :::
 
 ## What does git do? {.smaller}
