@@ -1,0 +1,155 @@
+---
+title: "4.1 Practical"
+subtitle: "Branching, merging, and pull requests"
+
+---
+
+In this practical, you'll create a new branch, make some changes, and then merge those changes back using GitHub's web interface.
+
+## Our branching workflow
+
+Remember the branching process:
+
+- We create a new `branch` from main (`git branch <branch-name>`)
+- We `switch` to our new branch (`git checkout <branch-name>` or `git switch <branch-name>`)
+- We make changes, `add`, and `commit` as usual
+- We *`push` our branch to GitHub (`git push origin <branch-name>`)
+- We create a `pull request` on GitHub to merge our changes
+- We `merge` the pull request and `delete` the branch
+
+## Step 1: Create and switch to a new branch
+
+1. **Check your current branch** and status:
+   ```bash
+   git status
+   git branch
+   ```
+
+2. **Create a new branch** called `feature-bio`:
+   ```bash
+   git branch feature-bio
+   ```
+
+3. **Switch to your new branch**:
+   ```bash
+   git checkout feature-bio
+   ```
+   
+   *Or use the newer syntax:*
+   ```bash
+   git switch feature-bio
+   ```
+
+4. **Verify you're on the new branch**:
+   ```bash
+   git branch
+   ```
+   *You should see an asterisk (*) next to `feature-bio`*
+
+::: {.callout-tip}
+## Shortcut!
+You can create and switch to a new branch in one command:
+`git checkout -b feature-bio` or `git switch -c feature-bio`
+:::
+
+## Step 2: Make changes on your branch
+
+1. **Create a new file** called `about.md`:
+   ```bash
+   touch about.md
+   ```
+
+2. **Edit the file** and add some content about yourself:
+   ```markdown
+   # About Me
+   
+   ## Bio
+   Write a few sentences about yourself here.
+   
+   ## Research Interests
+   - List your research areas
+   - Or hobbies if you prefer!
+   
+   ## Fun Fact
+   Share something interesting about yourself.
+   ```
+
+3. **Add and commit your changes**:
+   ```bash
+   git add about.md
+   git commit -m "Add personal bio page"
+   ```
+
+## Step 3: Push your branch to GitHub
+
+1. **Push your branch** to GitHub:
+   ```bash
+   git push origin feature-bio
+   ```
+
+2. **Check the output** - git will give you a link to create a pull request!
+
+## Step 4: Create a pull request on GitHub
+
+1. **Go to your repository** on GitHub in your browser
+2. **You should see a yellow banner** saying "Compare & pull request" - click it!
+   
+   *If you don't see it:*
+   - Click the **"Branch"** dropdown and select `feature-bio`
+   - Click **"Contribute"** → **"Open pull request"**
+
+3. **Fill in the pull request details:**
+   - **Title**: Something descriptive like "Add personal bio page"
+   - **Description**: Explain what changes you made
+   - **Review the changes** in the "Files changed" tab
+
+4. **Click "Create pull request"**
+
+## Step 5: Review and merge the pull request
+
+1. **Review your pull request:**
+   - Check the **"Files changed"** tab to see your modifications
+   - Look at the **"Checks"** (if any are running)
+
+2. **Merge the pull request:**
+   - Click **"Merge pull request"**
+   - Click **"Confirm merge"**
+   - Optionally click **"Delete branch"** to clean up
+
+## Step 6: Update your local repository
+
+1. **Switch back to main branch**:
+   ```bash
+   git checkout main
+   ```
+
+2. **Pull the latest changes**:
+   ```bash
+   git pull origin main
+   ```
+
+3. **Verify your changes** are now in main:
+   ```bash
+   ls
+   cat about.md
+   ```
+
+4. **Clean up your local branch** (optional):
+   ```bash
+   git branch -d feature-bio
+   ```
+
+::: {.callout-tip collapse="true"}
+## git branch hints
+
+- Use `git branch` to list all branches
+- Use `git branch <name>` to create a new branch
+- Use `git checkout <name>` or `git switch <name>` to switch branches
+- Use `git push origin <branch-name>` to push a branch to GitHub
+- Always create pull requests for important changes - even when working alone!
+- Pull requests provide a record of what changed and why
+:::
+
+## Challenge: Try it again!
+
+Create another branch, make different changes (maybe edit your README.md), and go through the pull request process again!
