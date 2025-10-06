@@ -1,13 +1,3 @@
-# Part 1: local `git`
-
-## What does `git` do?
-
-::: {#fig-workflow}
-![](../assets/process_fast.gif){fig-alt="Animated GIF showing a simplified git workflow process, adding, editing and deleting files in a project."}
-
-Git workflow process visualization
-:::
-
 ## What does `git` do?
 
 - `git` allows you to bundle up changes to various files, and give the group of changes a unique [commit hash]{.extra} and an explanatory message.
