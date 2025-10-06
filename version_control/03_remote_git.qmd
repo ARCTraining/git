@@ -11,4 +11,5 @@ format:
         toc: true
 ---
 
-- intro git push etc.
+- push and pull
+- using github
