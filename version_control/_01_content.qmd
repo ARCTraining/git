@@ -7,28 +7,30 @@
 - Provide consultancy work for research projects
 - Contact us via the [Request Form](https://it.leeds.ac.uk/it?id=sc_cat_item&sys_id=7587b2530f675f00a82247ece1050eda)
 
+## Join our community
+
+We're trying to make build a self-supporting community for researchers who do computation research
+
+Visit [arc.leeds.ac.uk/community/join/](https://arc.leeds.ac.uk/community/join/) to join us!
+
 ## What is version control? {background-color="white"}
 
 ![One way of doing version control...](https://phdcomics.com/comics/archive/phd101212s.gif){fig-alt="Cartoon of a researcher saving various different versions of a file under increasingly complicated and confusing file names."}
 
-## What is version control? 
+## What can version control do for us? 
 
 ::: {.incremental}
-- Often described as "track changes", although that's not *quite* right
-- A super-powerful "undo" button
-- A way of working collaboratively without over-writing each other's work
-- A way of [recording exactly what you did and when]{.extra}
+
+- Record **what** changes were made to a file, **when**, and **who** by
+- Travel back in time
+- Manage multiple versions of the same set of files
+- Work collaboratively without over-writing each other's work
+
 :::
-
-## What is version control? 
-
-A digital lab notebook for your research computing!
-
-![[Daderot](https://commons.wikimedia.org/wiki/File:Lab_book_-_Lawrence_Berkeley_National_Laboratory_-_DSC08822.JPG), Public domain, via Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/5/5a/Lab_book_-_Lawrence_Berkeley_National_Laboratory_-_DSC08822.JPG){fig-alt="Photograph of a faded, old laboratory notebook."}
 
 ## What is a version control system?
 
-- A more automated and structured way to version control your work
+- Automated and structured way to version control your work
 - Usually a software that records a "snapshot" of your work
 - Records:
   - What files have changes/how they changed since the last snapshot
@@ -38,60 +40,79 @@ A digital lab notebook for your research computing!
 
 ## Why is version control important?
 
+### Protect your work
 
-Who here has "lost" research work?
+Have you ever "lost" research work?
 
-![](404.png){fig-alt="404 not found page with cartoon robot." fig-align="center"}
-
-
-*By accidentally overwriting results? By not knowing where the file is saved/what it's called? By a file becoming corrupted or unopenable?*
++ *Accidentally overwritten results?*
++ *Forgotten where the file is saved/what it's called?*
++ *Had a file become corrupted or unopenable?*
 
 
 ## Why is version control important?
 
 ### Reproducibility
 
-- It allows you to point to a set of results you produced, possibly years ago, and say *"this is the version of the code that produced these results!"*
-- It allows you to tie certain versions of code to a preprint of a manuscript, and other versions to the final accepted version
-- It allows you to mint a DOI against a certain version of your code
+Allows you to...
+
+::: {.incremental}
+
+- Point to a set of results you produced, possibly years ago, and say *"this is the version of the code that produced these results!"*
+- Tie certain versions of code to a preprint of a manuscript, and other versions to the final accepted version
+- Associate a Digital Object Identifier (DOI) with a certain version of your code
+
+:::
 
 ## Why is version control important?
 
-- Recording contributions and collaborating
-  - Helps to ensure that contributions are recorded at all stages of a project
-- Open research: can facilitate open-source development of research code, and also allow other researchers to accurately reproduce your methods 
+### Collaboration and open research
 
-## What is version control?
+::: {.incremental}
 
-- We're going to use `git`, which is a strangely named version control software
-- We'll use this to get hands-on experience of how version control works
-- There are lots of other ways to do version control, but `git` is very widely used
-    - If *version control* was *word processing*, `git` would be *Microsoft Word*
-- We will also use GitHub, an online cloud platform for `git`.
+- Helps ensure contributions are recorded at all stages of a project
+- Facilitates open-source development of research code
+- Allows other researchers to accurately reproduce your methods 
 
-## What is `git`
+:::
 
-- Free and open-source software that runs on your computer locally
+## What is `git`?
+
+- Free and open-source version control software
+- Most widely used
+- Can be installed locally
 - Tracks changes in any set of files (code, documents, images, etc.)
 - Creates a complete history of your project in a hidden `.git` folder
-- Designed to handle everything from small personal projects to large collaborative software development
-- The most widely used version control system in the world
 
-## What is `git`
+## What is gitHub?
 
-- While we will provide instructions for you to install `git` on your computer locally, today we are going to work on a virtual machine
-  - Lets us focus on learning `git` and not trouble-shooting install issues
-  - We're here to support you to install it locally on your machine if you run into issues after this course
+- Git repository hosting platform
+- Accessed through a browser
+- Provides a remote 'hub' for your code
+- Facilitates sharing and collaborating on code projects
+
+## How will we learn `git` on the course?
+
+- We'll use codespaces, cloud-based development environments hosted on GitHub
+- Codespaces allows us to practice using git without a local install
+- Local install is recommended for a more complete git experience!
 
 ## What can we use git for?
 
-`git` works for any files that are in plaintext. This includes:
+- `git` works for any files that are in plaintext. 
+- This includes:
 
 `.py`, `.txt`, `.ipynb`, `.csv`, `.json`, `.c`, `.cc`, `.tex`, `.bib`, `.md`
 
-and many, many more! Files that aren't plain text *might* work, but are likely to be a bit of a mess and not particularly easy to work with.
+- Mainly used for code, but can also be used for notes, documentation, and certain data sets (we'll discuss suitability and caveats later in the course)
 
-- Mainly used for code, but can also be used for writing/notes, and certain data sets (we'll discuss suitability and caveats later in the course)
+## What should we **not** use git for?
+
+Generally speaking, we don't use it for...
+
+- Local configuration files
+- Test outputs and logs 
+- Passwords and other sensitive data
+- Large binary files (like videos and audio)
 
 # `git` terminology
 
@@ -101,10 +122,18 @@ and many, many more! Files that aren't plain text *might* work, but are likely t
   - This is simply the folder or directory that we want to track
   - `git` tracks changes to an entire project folder instead of just a single file
 
-## GitHub
+# `git` terminology
 
-- We are going to be using a cloud platform called GitHub to host our virtual machine
-- We will also provide guidance for you to install `git` locally on your work machine
-- You need a GitHub account to use this service
+Also good to know...
+
++ Local vs remote
++ `clone`
++ `branch`
+
+We will discuss these in more detail later!
+
+## Help me visualise all this!!
+
+Let's see what this looks like in practice...
 
 ## Time for the first practical...
