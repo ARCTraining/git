@@ -1,0 +1,11 @@
+---
+title: "Undo changes"
+subtitle: "How to turn back time on your repo"
+# bibliography: ../assets/refs.bib
+format:
+    revealjs:
+        theme: styles.scss
+        footer: "[SWD2: Intro to version control with git and GitHub](../index.qmd) | [Advanced Research Computing, Uni of Leeds](https://arc.leeds.ac.uk/) | [Ask us for help](https://it.leeds.ac.uk/it?id=sc_cat_item&sys_id=7587b2530f675f00a82247ece1050eda)"
+---
+
+{{< include _05_content.qmd >}}

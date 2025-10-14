@@ -1,0 +1,264 @@
+---
+title: 5. Undo changes
+subtitle: How to turn back time!
+---
+
+## Presentation and theory
+
+There are many different ways to "undo" changes in your repository... let's explore some of them!
+
+:::{.callout-tip}
+## Reveal.js Presentation Controls
+
+The presentation linked below uses Reveal.js to build a HTML presentation. You can use the following keyboard shortcuts:
+
+- **Navigate slides**: Use arrow keys (←/→) or space bar to advance
+- **Overview mode**: Press `O` to see all slides at once
+- **Speaker notes**: Press `S` to open speaker view  
+- **Help menu**: Press `?` to see all keyboard shortcuts
+- **Fullscreen**: Press `F` to toggle fullscreen mode
+- **Zoom**: Press `Alt` + click to zoom in on slide content
+- **Print/PDF**: Add `?print-pdf` to the URL for print-friendly version
+
+:::
+
+[Open introduction presentation ↗](05_presentation.qmd){.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Open presentation in a new tab" target="_blank"}
+
+## Cheat sheet
+
+There are LOTS of ways to undo changes in git. Open up our handy [cheat sheet](05_undo_cheatsheet.qmd){target="_blank"} to keep at hand!
+
+## Practical
+
+This practical will walk you through different "undo" options that you can use in git.
+
+### 1. Create a new repository with a readme file and open it "locally" (either clone it, or open it in codespaces).
+
+- See [Practical 1](01_practical.qmd) for guidance on creating a repository and opening it with Codespaces.
+- See the [GitHub documentation on cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) for more detail if using git locally.
+
+### 2. Edit your readme file
+
+Copy and paste the below content into your `README.md` file:
+
+```markdown
+# Testing `git` undo options is so much fun!
+
+This is a very important project being carried out by [NAME] to investigate the different possibilities of git and the various way to "undo" different changes.
+
+It's a good idea to use throwaway testing repositories like this to practice and get used to different commands, so that you don't accidentally lose your important research work.
+```
+
+You can add in your name if you like!
+
+### 3. Create a new file
+
+Create a new file called "secrets_of_the_universe.txt", and copy and paste the below into it:
+
+```text
+The answer is 42
+```
+
+### 4. Create another new file
+
+Create a new file called `lorem_ipsum.txt` and copy and paste the below into it:
+
+```text
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+```
+
+### 5. Complete the git cycle
+
+All of this is on the main branch.
+
+1. Use `git status` to see the current state of your files.
+2. Add your changes: `git add README.md secrets_of_the_universe.txt lorem_ipsum.txt`
+3. Use `git status` to see the current state of your files.
+4. Commit your changes: `git commit -m "Set up repository and add first files"`
+5. Use `git status` to see the current state of your files.
+6. Use `git push` to push your changes to the remote repository.
+
+### 6. Make some terrible edits
+
+Open up `lorem_ipsum.txt` and replace the text with this:
+
+```text
+blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+```
+
+Save the file, but don't add or commit!
+
+### 7. Undo unstaged edits
+
+Run a `git status`. You should have output something like this:
+
+```bash
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   lorem_ipsum.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+You can now use `git restore filename` to throw away the changes since the last commit:
+
+```bash
+git restore lorem_ipsum.txt
+```
+
+:::{.callout-warning}
+This permanently deletes your changes!
+:::
+
+Now check the contents of `lorem_ipsum.txt`, and the output of `git status`.
+
+### 7. Make more terrible edits
+
+1. Delete `secrets_of_the_universe.txt` and  `lorem_ipsum.txt`
+2. Run `git status`; both files should show "deleted".
+3. Add your edits - this time, using `git add .`
+4. Run `git status`: what did this do?
+
+:::{.callout-warning}
+Why might the command `git add .` cause issues?
+:::
+
+### 8. Undo staged edits
+
+1. Run `git status` to check on the state of your files
+2. To restore the files: `git restore --staged secrets_of_the_universe.txt lorem_ipsum.txt`
+3. Run `git status`: what did this do?
+4. Run `git restore secrets_of_the_universe.txt lorem_ipsum.txt`
+
+:::{.callout-note}
+
+- `git restore --staged filename.txt` will just undo the `git add` command, but keep your changes
+- `git restore filename.txt` will undo edits to unstaged files
+:::
+
+### 9. Make even more terrible edits
+
+1. Delete `secrets_of_the_universe.txt` and  `lorem_ipsum.txt` or replace their content with random letters.
+2. Run `git status` to check on the state of your files
+3. Add your edits:  `git add secrets_of_the_universe.txt lorem_ipsum.txt`
+4. Commit your edits: `git commit -m "Refining the secrets of the universe"`
+5. Push your edits: `git push origin main`/`git push`
+
+### 10. Undo your last commit!
+
+We have two options here:
+
+1. Undo the commit, but keep changes in the working directory so we can have a look to make sure there's nothing we want to keep - a soft reset
+    - `git reset --soft HEAD~1`
+2. Undo the commit and delete any changes since the last commit - a hard reset
+    - `git reset --hard HEAD~1`
+
+Choose which you want to do!
+
+Use `git status` before and after, and look to see how your remote repository is.
+
+:::{.callout-warning}
+Hard reset permanently deletes your work!
+:::
+
+### 11. After the last undo, add a new file!
+
+Create a file called `changes.md`, and fill it with text:
+
+```text
+Ch-ch-ch-ch-changes
+Turn and face the strange
+Ch-ch-changes
+Don't want to be a richer man
+Ch-ch-ch-ch-changes
+Turn and face the strange
+Ch-ch-changes
+There's gonna have to be a different man
+Time may change me
+But I can't trace time
+```
+
+Do your usual git cycle: add, commit, and use the status command to check on the progress.
+
+### 12. Try to push your new changes...
+
+If you run `git push origin main` you will run into an error:
+
+```bash
+error: failed to push some refs to 'github.com:murphyqm/teaching_prototyping.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+You have two options:
+
+- "Pull" the changes from the remote to integrate them
+- "Force" our changes to override the remote changes
+    - This is what we're going to do this time!
+    - `git push -f origin main`
+
+What does the remote repository look like now?
+
+### 13. Scratch all of it, I want to go back to a specific point!
+
+Let's use the command `git log`!
+
+- `git log --oneline` - specifying one line logs makes it easier to read.
+- This provides you with a list of commits, and their specific unique hashes/IDs, from most recent to oldest:
+
+```bash
+2e7f4b6 (HEAD -> main, origin/main) Add in lyrics
+94941b5 Add new file
+bf351e5 Set up repository and add first files
+```
+
+### 14. Single commit undo with revert
+
+Example:
+
+```bash
+2e7f4b6 (HEAD -> main, origin/main) Add in lyrics
+94941b5 Add new file
+bf351e5 Set up repository and add first files
+```
+
+
+- Use `git log --oneline` to get a list of commit IDs as above.
+- Use `git revert <commit-hash>` to undo that commit, e.g. `git revert 94941b5`
+- You'll be asked to create a commit message for this reversion
+- Use `git log --oneline` again
+
+```bash
+33e5056 (HEAD -> main) Revert "Add new file"
+2e7f4b6 (origin/main) Add in lyrics
+94941b5 Add new file
+bf351e5 Set up repository and add first files
+```
+
+How has this modified your files?
+
+### 15. Go back in time with reset
+
+Example:
+
+I return the following from `git log --oneline`:
+
+```bash
+33e5056 (HEAD -> main) Revert "Add new file"
+2e7f4b6 (origin/main) Add in lyrics
+94941b5 Add new file
+bf351e5 Set up repository and add first files
+```
+
+I want to return the entire state of the repository to `94941b5 Add new file`
+
+I run `git reset 94941b5`
+
+What is going to happen?

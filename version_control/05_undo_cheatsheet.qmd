@@ -1,0 +1,109 @@
+---
+title: "Git undo cheat sheet"
+---
+
+## Untracked Files
+
+For files that have never been added to git
+
+| Scenario | Command | Effect |
+|----------|---------|---------|
+| Remove single untracked file | `rm filename.txt` | Permanently deletes file |
+| Remove all untracked files | `git clean -f` | Removes all untracked files |
+| Remove untracked files & directories | `git clean -fd` | Removes untracked files and folders |
+| Preview what will be cleaned | `git clean -n` | Shows what would be removed (dry run) |
+
+## Modified/Unstaged Files
+
+For files that have been changed but not yet `git add`ed
+
+| Scenario | Command | Effect |
+|----------|---------|---------|
+| Discard changes to single file | `git restore filename.txt` | Reverts file to last committed version |
+| Discard changes to all files | `git restore .` | Reverts all modified files |
+| Discard changes (older syntax) | `git checkout -- filename.txt` | Same as restore (legacy command) |
+
+
+:::{.callout-warning}
+These commands permanently delete your uncommitted changes!
+:::
+
+## Added/Staged Files
+
+For files that have been `git add`ed but not yet committed
+
+| Scenario | Command | Effect |
+|----------|---------|---------|
+| Unstage single file | `git restore --staged filename.txt` | Moves file back to modified state |
+| Unstage all files | `git restore --staged .` | Unstages all staged files |
+| Unstage file (older syntax) | `git reset filename.txt` | Same as restore --staged |
+| Unstage all (older syntax) | `git reset` | Unstages all files |
+
+
+
+:::{.callout-tip}
+Your changes are preserved, just moved back to unstaged state
+:::
+
+## Committed Changes
+
+For files that have been committed to git history
+
+### Undo Last Commit
+
+| Scenario | Command | Effect |
+|----------|---------|---------|
+| Undo commit, keep changes staged | `git reset --soft HEAD~1` | Moves commit back to staging area |
+| Undo commit, keep changes unstaged | `git reset HEAD~1` | Moves commit back to working directory |
+| Undo commit, discard changes | `git reset --hard HEAD~1` | Permanently deletes commit and changes |
+
+### Undo Multiple Commits
+
+| Scenario | Command | Effect |
+|----------|---------|---------|
+| Go back 3 commits (keep changes) | `git reset HEAD~3` | Moves 3 commits back to working directory |
+| Go back to specific commit | `git reset abc1234` | Resets to commit with hash abc1234 |
+| Hard reset to specific commit | `git reset --hard abc1234` | Permanently deletes everything after abc1234 |
+
+### Safe Undoing (Recommended)
+
+| Scenario | Command | Effect |
+|----------|---------|---------|
+| Revert specific commit | `git revert abc1234` | Creates new commit that undoes abc1234 |
+| Revert last commit | `git revert HEAD` | Creates new commit that undoes last commit |
+| Revert merge commit | `git revert -m 1 abc1234` | Reverts a merge commit |
+
+
+:::{.callout-tip}
+Creates new commits instead of destroying history
+:::
+
+## 🔍 Before You Undo: Check Your Status
+
+| Command | Purpose |
+|---------|---------|
+| `git status` | See current state of files |
+| `git diff` | See exact changes in working directory |
+| `git diff --staged` | See exact changes in staging area |
+| `git log --oneline` | See recent commit history |
+| `git log --oneline -n 5` | See last 5 commits |
+| `git show abc1234` | See details of specific commit |
+
+## Safety Tips
+
+- **Always check `git status` first** - know what you're undoing
+- **Use `git stash`** to temporarily save work: `git stash push -m "work in progress"`
+- **Prefer `git revert`** over `git reset` for shared repositories
+- **Test with `--dry-run` or `-n`** when available (like `git clean -n`)
+- **Hard resets are dangerous** - they permanently delete work
+- **Consider branching** before experimenting: `git checkout -b experiment`
+
+## Emergency Recovery
+
+| Scenario | Command | Purpose |
+|----------|---------|---------|
+| Find "lost" commits | `git reflog` | Shows history of HEAD movements |
+| Recover from reflog | `git checkout abc1234` | Go back to a reflog entry |
+| Create branch from reflog | `git branch recovery abc1234` | Save a reflog entry as new branch |
+
+Remember: Git rarely truly deletes anything immediately - `git reflog` is your friend!

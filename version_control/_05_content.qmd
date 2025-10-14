@@ -1,0 +1,84 @@
+## What kind of changes might we want to undo?
+
+- Throw away changes made since the last commit
+- Undo a `git add` and stop tracking files
+- Undo a `git commit`
+- Roll back to a previous commit
+
+## Different states
+
+- Files are in different "states" in our repository
+    - Modified/untracked/unstaged: new or edited files; have not yet used `git add <filename>` to track them
+    - Staged: files that have been added using `git add <filename>`, but not yet committed
+    - Committed: files have been commited with `git commit -m "message here"` and are associated with a *unique git commit id*
+
+## Different states
+
+- There are different ways to roll back or undo changes depending on what state our files are in.
+- Let's look at the different possibilities...
+
+## Different states - unstaged/modified
+
+
+![We may have created or edited files, but not have used `git add` or `git commit` yet...](../assets/git-cycle/git-cycle-01.jpg)
+
+## Undoing untracked file creation/changes
+
+- If you have files that have *never* been added to git, you will just have to delete them
+- Either use the Linux command `rm filename`, or right click on them and delete
+
+## Undoing unstaged/modified changes
+
+If you've modified a file but haven't run `git add` yet:
+
+```bash
+git restore filename.txt
+```
+
+:::{.callout-warning}
+This permanently deletes your changes!
+:::
+
+
+## Different states - staged
+
+
+![If we do a `git add` command to a file, we "stage" the file...](../assets/git-cycle/git-cycle-02.jpg)
+
+
+## Different states - staged
+
+
+![If we do a `git add` command to a file, we "stage" the file...](../assets/git-cycle/git-cycle-03.jpg)
+
+
+## Undoing staged changes
+
+If you've run `git add` but haven't committed yet:
+
+```bash
+git restore --staged filename.txt
+```
+
+This moves the file back to "modified" state - your changes are still there!
+
+- At this point, you can continue editing your files
+- Or you can further undo changes by using the `git restore` command we did for untracked files!
+
+## Undoing staged changes
+
+This moves the file back to "modified"/"unstaged" state - your changes are still there!
+
+
+![A `git restore --staged` command will undo an `add`](../assets/undo-figs/git-undo-2.png)
+
+
+## Different states - "committed"
+
+![A `git commit` saves a snapshot of our folder](../assets/git-cycle/git-cycle-06.jpg)
+
+## Undoing committed changes
+
+A few different options:
+
+- Can undo the previous commit, but keep the changes (as )
