@@ -255,38 +255,81 @@ gitGraph
 
 So we've looked at the idea of bundling up changes as [commits]{.extra}, but what does that actually involve?
 
-I think of it like packing a picnic basket:
+I like to think of a theatre, where the files are the cast waiting in the wings...
+
+::: {#fig-cycle-01}
+![](../assets/git-cycle/git-cycle-01.jpg)
+:::
+
+## The `git` cycle: `add` {.smaller}
+
+`git add filename` adds a file to the staging area...
+
+::: {#fig-cycle-02}
+![](../assets/git-cycle/git-cycle-02.jpg)
+:::
+
+## The `git` cycle: `add` {.smaller}
+
+It tells git, *'pay attention to any changes I make to this file'*
+
+::: {#fig-cycle-03}
+![](../assets/git-cycle/git-cycle-03.jpg)
+:::
+
+## The `git` cycle {.smaller}
+
+When a file on the stage is modified, git notices and flags it with 'M'
+
+::: {#fig-cycle-04}
+![](../assets/git-cycle/git-cycle-04.jpg)
+:::
+
+## The `git` cycle {.smaller}
+
+When an unstaged file is added or modified, git notices and flags it with 'U'
+
+::: {#fig-cycle-05}
+![](../assets/git-cycle/git-cycle-05.jpg)
+:::
+
+## The `git` cycle: `commit` {.smaller}
+
+`git commit` creates a record of the changes in the version history 
+
+::: {#fig-cycle-06}
+![](../assets/git-cycle/git-cycle-06.jpg)
+:::
+
+## The `git` cycle: `commit` {.smaller}
+
++ Each commit can be identified by its unique ID or hash
++ A message must be included with each commit, explaining the change
+
+::: {#fig-cycle-07}
+![](../assets/git-cycle/git-cycle-07.jpg)
+:::
+
+## The `git` cycle: picnic analogy {.smaller}
+
+Maeve likes to think of it like packing a picnic basket:
 
 :::: {.box-ly}
 
 ::: {.incremental}
 1. I make a sandwich and wrap it up
-2. I add it to the basket
+2. I **add** it to the basket
 3. I chop up some fruit and put it in a lunchbox
-4. I add *that* to the basket
+4. I **add** that to the basket
 5. I make a smoothie and bottle it
-6. I add *that* to the basket too
-7. Finally, I close over the top of the picnic basket and secure the latch
+6. I **add** that to the basket too
+7. Finally, I close the picnic basket and secure the latch
 :::
 ::::
 
-## The `git` cycle {.smaller}
+## The `git` cycle: picnic analogy {.smaller}
 
-How does this have anything to do with `git`?
-
-:::: {.box-ly}
-1. I make a sandwich and wrap it up
-2. I add it to the basket
-3. I chop up some fruit and put it in a lunchbox
-4. I add *that* to the basket
-5. I make a smoothie and bottle it
-6. I add *that* to the basket too
-7. Finally, I close over the top of the picnic basket and secure the latch
-::::
-
-## The `git` cycle {.smaller}
-
-Let's introduce the concept of `add` as well as `commit`.
+How is it like the git cycle?
 
 :::: {.box-ly}
 1. I make a sandwich and wrap it up -> **I make some edits to files/create new files in my project folder**
@@ -296,20 +339,6 @@ Let's introduce the concept of `add` as well as `commit`.
 5. I make a smoothie and bottle it -> **I make some more edits to files**
 6. I add *that* to the basket too -> **I `add` my changes**
 7. I close over the top of the picnic basket and secure the latch -> **I `commit` all these changes that I previously `added`**
-::::
-
-## The `git` cycle
-
-Let's introduce the concept of `add` as well as `commit`.
-
-:::{.incremental}
-- You create or edit files, *then*
-- You `add` those changes, *then*
-- You either create/edit more files and repeat `add` *or* you `commit` all the added changes with a little message
-:::
-
-:::: {.box-lp}
-I think of `git add` as like a quick save, whereas `git commit` is a full, proper save.
 ::::
 
 ## The `git` cycle
@@ -397,5 +426,17 @@ As well as being able to "undo" entire commits, you can undo different stages of
 :::::
 
 ::::::
+
+## Maeve's mammoth commit {.smaller}
+
+::: {.incremental}
++ Maeve's picnic commit was pretty big!
++ What if she wants to remove the fruit without removing the sandwich and smoothie?
++ In practice, aim to keep commits small and focused on a specific update or bugfix
+:::
+
+::: {#fig-cycle-08}
+![](../assets/git-cycle/git-cycle-08.jpg)
+:::
 
 # Let's try it out...
