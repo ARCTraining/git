@@ -1,0 +1,36 @@
+---
+title: 5. Undo changes
+subtitle: How to turn back time!
+---
+
+## Presentation and theory
+
+There are many different ways to "undo" changes in your repository... let's explore some of them!
+
+:::{.callout-tip}
+## Reveal.js Presentation Controls
+
+The presentation linked below uses Reveal.js to build a HTML presentation. You can use the following keyboard shortcuts:
+
+- **Navigate slides**: Use arrow keys (←/→) or space bar to advance
+- **Overview mode**: Press `O` to see all slides at once
+- **Speaker notes**: Press `S` to open speaker view  
+- **Help menu**: Press `?` to see all keyboard shortcuts
+- **Fullscreen**: Press `F` to toggle fullscreen mode
+- **Zoom**: Press `Alt` + click to zoom in on slide content
+- **Print/PDF**: Add `?print-pdf` to the URL for print-friendly version
+
+:::
+
+[Open introduction presentation ↗](05_presentation.qmd){.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Open presentation in a new tab" target="_blank"}
+
+## Cheat sheet
+
+There are LOTS of ways to undo changes in git. Open up our handy [cheat sheet](05_undo_cheatsheet.qmd){target="_blank"} to keep at hand!
+
+## Practical
+
+- We're going to try out some of these undo options live
+- Because there are so many different options, it can get quite confusing!
+    - We're only going to run through a few basic options today
+    - Have a look at the [homework](05_homework.qmd) for step-by-step instructions running through loads of other undo options!
