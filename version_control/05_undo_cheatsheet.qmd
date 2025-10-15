@@ -2,6 +2,15 @@
 title: "Git undo cheat sheet"
 ---
 
+## Quick reference: most common options
+
+| Scenario | Command | Effect |
+|----------|---------|---------|
+| Undo commit, keep changes unstaged | `git reset HEAD~1` | Moves commit back to working directory |
+| Check previous commit history | `git log --oneline` | Print commit history |
+| Return to an old commit | git switch -c new-branch-name abc1234 | Create a new branch based on an old commit |
+
+
 ## Untracked Files
 
 For files that have never been added to git

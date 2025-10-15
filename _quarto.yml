@@ -25,6 +25,7 @@ website:
       - section: Day 2
         contents:
         - href: version_control/05_undo_changes.qmd
+        - href: version_control/05_homework.qmd
         - href: version_control/collaboration.qmd
 
 format:

@@ -5,12 +5,26 @@
 - Undo a `git commit`
 - Roll back to a previous commit
 
+## Abandoning changes
+
+![](../assets/undo-figs/branching1.png)
+
+## Abandoning changes
+
+![](../assets/undo-figs/branching2.png)
+
+## But there are other ways
+
+- Need more precision
+- Might have to abandon some changes you wanted to keep
+    - Might not want to abandon changes to *all* files
+
 ## Different states
 
 - Files are in different "states" in our repository
     - Modified/untracked/unstaged: new or edited files; have not yet used `git add <filename>` to track them
     - Staged: files that have been added using `git add <filename>`, but not yet committed
-    - Committed: files have been commited with `git commit -m "message here"` and are associated with a *unique git commit id*
+    - Committed: files have been committed with `git commit -m "message here"` and are associated with a *unique git commit id*
 
 ## Different states
 
@@ -19,15 +33,16 @@
 
 ## Different states - unstaged/modified
 
-
 ![We may have created or edited files, but not have used `git add` or `git commit` yet...](../assets/git-cycle/git-cycle-01.jpg)
 
-## Undoing untracked file creation/changes
+## Untracked files - git doesn't care
 
 - If you have files that have *never* been added to git, you will just have to delete them
 - Either use the Linux command `rm filename`, or right click on them and delete
 
-## Undoing unstaged/modified changes
+All our other examples assume that at some point, the file has been tracked with git...
+
+## Unstaged or modified files
 
 If you've modified a file but haven't run `git add` yet:
 
@@ -39,6 +54,7 @@ git restore filename.txt
 This permanently deletes your changes!
 :::
 
+- Wipes away any changes since the file was last committed
 
 ## Different states - staged
 
@@ -79,6 +95,58 @@ This moves the file back to "modified"/"unstaged" state - your changes are still
 
 ## Undoing committed changes
 
-A few different options:
+Lots of different options:
 
-- Can undo the previous commit, but keep the changes (as )
+- Can undo the previous commit, but keep the changes in our working directory to sort through
+- Can undo the previous commit and delete all changes
+- Can rewind time to a specific old commit (and create a new branch to keep working from)
+- Can reset everything back to a specific old commit
+- Can revert (essentially undo) one specific old commit
+
+## Undoing committed changes
+
+- Let's just focus on some of the more commonly used options!
+- Details of the others provided on the [cheat sheet](05_undo_cheatsheet.qmd)!
+
+*Undo the previous commit, but keep the changes in our working directory to sort through*
+
+*Rewind time to a specific old commit (and create a new branch to keep working from)*
+
+## Looking through history
+
+- Before we change anything, let's make sure we know *what* we're changing:
+    - `git log --oneline` gives us a easy-to-read snippet of our commit history
+    - From most recent to oldest
+    - Gives you the unique git commit id/hash
+
+```bash
+2e7f4b6 (HEAD -> main, origin/main) Add in lyrics
+94941b5 Add new file
+bf351e5 Set up repository and add first files
+```
+
+- HEAD tells you which commit on which branch you're working from
+
+## HEAD
+
+![`HEAD` tells you where you are in the git map](../assets/undo-figs/gitHEAD.png)
+
+## Undo the previous commit
+
+- `git reset --soft HEAD~1`: moves commit back to the staging area
+    - As though files have been `git add`ed, but not `git commit`ted
+- `git reset HEAD~1`: moves files back to the working directory
+    - As though files have been neither `git add`ed or `git commit`ted
+
+## Rewind time to a previous commit {.smaller}
+
+- Run `git status` to make sure you've got a clean working directory
+- Run `git log --oneline` to find the commit you want to swap to 
+    - You can explore your commits on GitHub
+- Create a new branch that uses the chosen commit:
+    - `git branch new-branch-name abc1234` where `abc1234` is your chosen git id
+- Swap to that branch:
+    - `git switch new-branch-name`
+- Or you can do it all in one go: `git switch -c new-branch-name abc1234`
+
+# But it's easier to learn these in practise...
