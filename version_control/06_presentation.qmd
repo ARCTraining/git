@@ -1,0 +1,93 @@
+---
+title: "Collaboration"
+subtitle: "Tools that can help with collaborating on git repositories"
+# bibliography: ../assets/refs.bib
+format:
+    revealjs:
+        theme: styles.scss
+        footer: "[SWD2: Intro to version control with git and GitHub](../index.qmd) | [Advanced Research Computing, Uni of Leeds](https://arc.leeds.ac.uk/) | [Ask us for help](https://it.leeds.ac.uk/it?id=sc_cat_item&sys_id=7587b2530f675f00a82247ece1050eda)"
+---
+
+## There are many ways to collaborate
+
+![Everyone can use one repository, added as collaborators](../assets/collab1.png)
+
+## There are many ways to collaborate
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+![Everyone can use one repository, added as collaborators](../assets/collab1.png)
+
+:::
+
+::: {.column width="40%"}
+
+- You need to trust everyone!
+- Important to use branches
+- Good for small teams
+
+:::
+
+::::
+
+## There are many ways to collaborate
+
+![People can fork or copy the repository](../assets/collab2.png)
+
+## There are many ways to collaborate
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![People can fork or copy the repository](../assets/collab2.png)
+
+:::
+
+::: {.column width="50%"}
+
+- Can let anyone fork the repository and make changes
+- They have to make a "pull request" so you can review their changes
+- Easier for bigger projects
+- This is what we will be trying out today!
+
+:::
+
+::::
+
+## Useful git tools: `.gitignore`
+
+- Something that is particularly useful when working on a group project is the git ignore file
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- A file called `.gitignore` in the top/parent directory of your git repository
+- Plain text file with a list of files that should not be tracked with git
+
+:::
+
+::: {.column width="50%"}
+
+```text
+
+scratch_notes.md
+__pycache__/
+.ipynb_checkpoints
+_build/
+*.egg
+
+```
+
+*We can chat about Jupyter notebooks and their issues with git at the end of the course during the Q&A if you like.*
+
+:::
+
+::::
+
+## Collaboration
+
+Let's jump straight in to it!

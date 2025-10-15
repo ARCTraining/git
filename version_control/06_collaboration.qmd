@@ -1,0 +1,31 @@
+---
+title: "6. Collaboration"
+subtitle: "How do we work together with others on projects?"
+format:
+    html:
+        respect-user-color-scheme: true
+        theme:
+            light: [cosmo, ../theme.scss, styles.scss]
+            dark: [cosmo, ../theme-dark.scss, styles.scss]
+        css: ../styles.css
+        toc: true
+---
+
+Let's learn about some git features that can help with collaboration!
+
+:::{.callout-tip}
+## Reveal.js Presentation Controls
+
+The presentation linked below uses Reveal.js to build a HTML presentation. You can use the following keyboard shortcuts:
+
+- **Navigate slides**: Use arrow keys (←/→) or space bar to advance
+- **Overview mode**: Press `O` to see all slides at once
+- **Speaker notes**: Press `S` to open speaker view  
+- **Help menu**: Press `?` to see all keyboard shortcuts
+- **Fullscreen**: Press `F` to toggle fullscreen mode
+- **Zoom**: Press `Alt` + click to zoom in on slide content
+- **Print/PDF**: Add `?print-pdf` to the URL for print-friendly version
+
+:::
+
+[Open introduction presentation ↗](06_presentation.qmd){.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Open presentation in a new tab" target="_blank"}

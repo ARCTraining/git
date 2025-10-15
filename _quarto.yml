@@ -12,6 +12,8 @@ website:
     logo-alt: "Logo, with a cartoon blue cloud with electronic circuits"
   sidebar:
     contents:
+      - href: https://github.com/ARCTraining/git
+        text: Visit the GitHub repository
       - section: Day 1
         contents:
         - href: version_control/01_intro.qmd
@@ -26,7 +28,8 @@ website:
         contents:
         - href: version_control/05_undo_changes.qmd
         - href: version_control/05_homework.qmd
-        - href: version_control/collaboration.qmd
+        - href: version_control/06_collaboration.qmd
+        - href: version_control/06_practical.qmd
 
 format:
   html:
