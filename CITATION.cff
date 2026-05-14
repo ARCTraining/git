@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-title: "Research Software Development in Python"
-version: 1.0.0
+title: "Learning Git and GitHub"
+version: 1.0.1
 license: "CC-BY-NC-SA-4.0"
 type: "website"
 abstract: "Course presentations, notes, and practical tutorials."
