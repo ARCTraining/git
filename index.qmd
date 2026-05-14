@@ -2,7 +2,9 @@
 title: "Learning Git and GitHub"
 ---
 
-# Course content
+[![DOI](https://zenodo.org/badge/1070653879.svg)](https://doi.org/10.5281/zenodo.20180993)
+
+## Course content
 
 This course is an introduction to version control with git and GitHub.
 
