@@ -47,6 +47,7 @@ Below is a list of contributors (in chronological order of addition) with associ
 - [Maeve Murphy Quinlan](https://orcid.org/0000-0003-2958-1008): conceptualization, writing (original draft), writing (review and editing), data curation, methodology.
   - Creation of website, Python workflows, GitHub actions.
   - Redesign of course.
+- [Sorrel Harriet](https://orcid.org/0000-0003-0143-6554): writing (original draft), writing (review and editing), vizualisation (addition and creation of graphics), supervision.
 
 ## Citation instructions
 
