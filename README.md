@@ -2,7 +2,18 @@
 
 SWD3: Research Software Development documentation and course notes.
 
-[![DOI](https://zenodo.org/badge/<GITHUB_ID>.svg)](https://zenodo.org/badge/latestdoi/<GITHUB_ID>)
+[![DOI](https://zenodo.org/badge/1070653879.svg)](https://doi.org/10.5281/zenodo.20180993)
+
+## How to deliver
+
+The course is fully self-contained at [https://arctraining.github.io/git/](https://arctraining.github.io/git/) with no additional required delivery notebooks/answers. No installations are required. Familiarity with GitHub codespaces is required to deliver (running through the rpactical sessions beforehand will provide enough knowledge to deliver; ensure you rehearse this before delivering live).
+
+The course material consists of:
+
+- Presentations (which are also available printed out all-on-one-screen for learners to review between sessions/after the course)
+- Practical sessions, which are designed to primarily be done independently by the students: they contain detailed instructions and screenshots, allowing the learners to work independently for a set time, and then regroup to run through the example/ask questions etc.
+
+The entire course is searchable via the top bar.
 
 ## Contributing
 
