@@ -8,7 +8,7 @@ This practical walks you through the steps to make your research software or scr
 
 Making your research software citable means that others can credit your work precisely, and that your contribution is traceable through the systems used for research assessment, impact reporting, and exercises such as REF.
 
-It also supports reproducibility by linking specific releases of your software to your publications.
+It also supports reproducibility, since it allows you to link specific releases of your software or data to your publications.
 
 ---
 
@@ -56,15 +56,10 @@ who shaped key design decisions, as well as RSEs and developers who
 built the software. Authorship criteria were agreed by the project team
 at the outset.
 
-## Author list
+## Authors
 
-- Jane Smith
-  - ORCID: https://orcid.org/0000-0000-0000-0000
-  - University of [Institution], Faculty of [Faculty], School of [School]
-
-- Arjun Patel
-  - ORCID: https://orcid.org/0000-0000-0000-0001
-  - University of [Institution], Faculty of [Faculty], School of [School]
++ [Jane Smith](https://orcid.org/0000-0000-0000-0000) - Professor - University of [Institution], School of [School]
++ [Arjun Patel](https://orcid.org/0000-0000-0000-0001) - Research Software Engineer - University of [Institution], School of [School]
 ```
 
 → Once you are happy with the content, commit your new file.
