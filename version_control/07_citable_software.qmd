@@ -61,6 +61,7 @@ at the outset.
 + [Jane Smith](https://orcid.org/0000-0000-0000-0000) - Professor - University of [Institution], School of [School]
 + [Arjun Patel](https://orcid.org/0000-0000-0000-0001) - Research Software Engineer - University of [Institution], School of [School]
 ```
+Other examples include [Trixi.jl](https://github.com/trixi-framework/Trixi.jl/blob/v0.4.28/AUTHORS.md), [pygmt](https://github.com/GenericMappingTools/pygmt/blob/main/AUTHORS.md) and [juliengdt](https://gist.github.com/juliengdt/91d80c812e41be891dcf)
 
 → Once you are happy with the content, commit your new file.
 
