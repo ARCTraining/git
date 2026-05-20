@@ -11,7 +11,7 @@
 
 We're trying to make build a self-supporting community for researchers who do computation research
 
-Visit [arc.leeds.ac.uk/community/join/](https://arc.leeds.ac.uk/community/join/) to join us!
+Visit [arc.leeds.ac.uk/community/join/](https://arc.leeds.ac.uk/community/) to join us!
 
 ## What is version control? {background-color="white"}
 
