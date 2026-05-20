@@ -33,3 +33,4 @@ This course is hands-on with lots of exercises, please be prepared to code and c
 
 - Collaboration with git and GitHub
 - Handling merge conflicts
+- Making software citable with Github and Zenodo

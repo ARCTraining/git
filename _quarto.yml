@@ -30,6 +30,7 @@ website:
         - href: version_control/05_homework.qmd
         - href: version_control/06_collaboration.qmd
         - href: version_control/06_practical.qmd
+        - href: version_control/07_citable_software.qmd
 
 format:
   html:
